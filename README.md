@@ -12,14 +12,34 @@ cd ~/ros2_ws
 source install/setup.bash
 ```
 
+### Downloading all dependencies
+```
+rosdep install -i --from-path src --rosdistro jazzy -y
+```
+
+### Creating a workspace
+```
+mkdir -p ~/ros2_ws/src
+```
+
 ### Building a project
 > Builds all the workspace
 ```
 cd ~/ros2_ws
 colcon build
 ```
+> Builds specific package only
 ```
 colcon build --packages-select <"package-name">
+```
+> Build creates the following directory structure
+```
+.
+├── build
+├── install
+├── log
+└── src
+
 ```
 
 ### Running turtlesim package
