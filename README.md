@@ -17,6 +17,12 @@ source install/setup.bash
 rosdep install -i --from-path src --rosdistro jazzy -y
 ```
 
+### Running turtlesim package
+```
+ros2 run turtlesim turtlesim_node
+ros2 run turtlesim turtle_teleop_key
+```
+
 ### Creating a workspace
 ```
 mkdir -p ~/ros2_ws/src
@@ -42,10 +48,38 @@ colcon build --packages-select <"package-name">
 
 ```
 
-### Running turtlesim package
-```
-ros2 run turtlesim turtlesim_node
-ros2 run turtlesim turtle_teleop_key
+### Building a package
 ```
 
-### 
+```
+
+> If package is CMAKE package, it will have the following structure
+```
+.
+├── CMakelists.txt
+├── include
+├── package.xml
+└── src
+```
+
+> If package is python package, it will have the following structure
+```
+.
+├── setup.py
+├── setup.cfg
+├── resource/my_package
+├── package.xml
+├── my_package
+└── src
+```
+
+> Create a CMake package
+```
+ros2 pkg create --build-type ament_cmake --license Apache-2.0 <package_name>
+```
+
+> Create a python package
+```
+ros2 pkg create --build-type ament_python --license Apache-2.0 <package_name>
+```
+
