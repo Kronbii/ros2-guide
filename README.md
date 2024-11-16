@@ -49,10 +49,6 @@ colcon build --packages-select <"package-name">
 ```
 
 ### Building a package
-```
-
-```
-
 > If package is CMAKE package, it will have the following structure
 ```
 .
